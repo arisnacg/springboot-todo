@@ -14,7 +14,8 @@ Or run the project with your favorite IDE and go to [http://localhost:8080](http
 ## API Documentation
 Check API documentation on my Postman [workspace](https://elements.getpostman.com/redirect?entityId=7580989-183374e9-16e1-4adf-b4ac-db9ab9597873&entityType=collection)
 
-## Milestone
+## Milestones
+- [ ] Create the unit tests
 - [ ] Connect to MySQL database
 - [ ] Implement JWT authentication
-- [ ] Develop web UI
+- [ ] Develop the web UI
