@@ -5,9 +5,14 @@ My first Spring Boot project. I use this project as playground to learn about Sp
 The project is created with Maven, so you just need to import it to your favorite IDE and build the project to resolve the dependencies.
 
 ## Usage 
-Run this command in the terminal:
+Run the project using `mvn` command.
 ```
 mvn spring-boot:run
+```
+Or use Docker to build or run the project
+```
+docker build -t springboot-todo . 
+docker run --name springboot-todo -p 8080:8080 springboot-todo
 ```
 Or run the project with your favorite IDE and go to [http://localhost:8080](http://localhost:8080)
 
