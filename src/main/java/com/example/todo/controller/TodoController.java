@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.todo.model.Todo;
+import com.example.todo.model.dto.CreateTodoDto;
+import com.example.todo.model.dto.UpdateTodoDto;
 import com.example.todo.service.TodoService;
+
+import jakarta.validation.Valid;
 
 @RestController
 public class TodoController {
@@ -36,14 +40,13 @@ public class TodoController {
   }
 
   @PostMapping("/todos")
-  Todo create(@RequestBody Todo todo) {
-    return todoService.create(todo.getName(), todo.getIsDone());
+  Todo create(@Valid @RequestBody CreateTodoDto body) {
+    return todoService.create(body.getName(), body.getIsDone());
   }
 
   @PutMapping("/todos/{id}")
-  Todo create(@PathVariable int id, @RequestBody Todo todo) {
-    boolean isDone = todo.getIsDone();
-    return todoService.update(id, todo.getName(), isDone);
+  Todo create(@PathVariable int id, @Valid @RequestBody UpdateTodoDto body) {
+    return todoService.update(id, body.getName(), body.getIsDone());
   }
 
   @DeleteMapping("/todos/{id}")
